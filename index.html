@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8" />
+	<title>Monte Carlo to calculate π</title>
+	<link rel="stylesheet" href="static/style.css" />
+	<script src="static/jquery.js"></script>
+	<script src="static/montecarlo.js"></script>
+	<script>
+		$(function () {
+		    var carlo = new MonteCarlo();
+
+            $('#start').live('click', function () {
+                carlo.clear();
+                carlo.calc(100);
+            });
+		});
+	</script>
+</head>
+<body>
+    <div class="container">
+        <canvas id="plot" width="600" height="600"></canvas>
+    </div>
+    <div class="status">
+        <span class="legend">Points:</span> <span id="points">0</span><br/>
+        <strong><span class="legend">Pi:</span> <span id="pi">0.00000000000000000000</span></strong><br/>
+        <span class="legend">Difference:</span> <span id="diff">0.00000000000000000000</span><br/><br/>
+        <input id="start" type="button" value="Start" />
+    </div>
+</body>
+</html>

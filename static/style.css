@@ -1,0 +1,53 @@
+body {
+	background-color: #f4f4f4;
+	margin: 0;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+	font-size: 0.9em;
+	font-weight: normal;
+	margin: 0 0 0.7em 0;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: #234674;
+}
+
+.container {
+	position: relative;
+	width: 600px;
+	height: 600px;
+	margin: 40px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+.point {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #0090ff;
+}
+
+.point.found {
+    background-color: #ff9000;
+}
+
+.status {
+    position: absolute;
+    left: 700px;
+    top: 40px;
+    font-family: monospace;
+    font-size: 1.4em;
+    line-height: 1.6;
+}
+
+.legend {
+    width: 120px;
+    display: inline-block;
+}
