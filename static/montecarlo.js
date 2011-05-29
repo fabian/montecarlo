@@ -18,7 +18,7 @@ MonteCarlo.prototype.calc = function (sample) {
         var y = Math.random();
 
         var color = '#ff9000';
-        if (x * x + y * y <= 1) {
+        if (Math.sqrt(x * x + y * y) <= 1) {
             this.found += 1;
             color = '#0090ff';
         }
