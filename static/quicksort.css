@@ -1,0 +1,34 @@
+body {
+	background-color: #f4f4f4;
+	margin: 0;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+	font-size: 0.9em;
+	font-weight: normal;
+	margin: 0 0 0.7em 0;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: #234674;
+}
+
+.container {
+    float: left;
+    padding: 30px;
+}
+
+.container canvas {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.count {
+    font-family: monospace;
+}
