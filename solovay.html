@@ -12,8 +12,10 @@
             var n = parseInt($('.number').val());
             var tests = parseInt($('.tests').val());
 
-            $('.result').text(solovay(n, tests));
-            $('.status').text(tests + " tests");
+            if (!isNaN(n)) {
+                $('.result').text(solovay(n, tests));
+                $('.status').text(tests + " tests");
+            }
         }
 
         $(function () {
