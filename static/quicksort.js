@@ -6,7 +6,7 @@ var QuickSort = function (container, random) {
     this.random = random;
 
     this.numbers = [];
-    this.time = 100;
+    this.time = 50;
     this.context = this.container.find('.plot').get(0).getContext('2d');
     this.count = 0;
 
