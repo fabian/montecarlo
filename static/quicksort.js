@@ -53,42 +53,51 @@ QuickSort.prototype.sort = function (numbers, first, last) {
     	}
     	x = numbers[pivot];
 
-        var interval = setInterval(function () {
-
-    		while (numbers[i] < x) {
-    			i++;
-    			that.count++;
-    		}
-
-    		while (x < numbers[j]) {
-    			j--;
-    			that.count++;
-    		}
-
-    		if (i <= j) {
-    			that.swap(numbers, i, j);
-
-    			i++;
-    			j--;
-    		}
-
-    		if (i > j) {
-    		    clearInterval(interval);
-
-	            setTimeout(function () {
-	        	    that.sort(numbers, first, j);
-	        	}, this.time);
-	        	setTimeout(function () {
-	            	that.sort(numbers, i, last);
-	        	}, this.time);
-    		}
-    		
+        setTimeout(function () {
+            that.conquer(numbers, x, first, last, i, j);
     	}, this.time);
     }
 };
 
-QuickSort.prototype.conquer = function (numbers, first, second) {
-    
+QuickSort.prototype.conquer = function (numbers, x, first, last, i, j) {
+
+    var that = this;
+
+	while (numbers[i] < x) {
+		i++;
+		this.count++;
+	}
+	this.count++;
+
+	while (x < numbers[j]) {
+		j--;
+		this.count++;
+	}
+	this.count++;
+
+	if (i <= j) {
+		this.swap(numbers, i, j);
+
+		i++;
+		j--;
+	}
+
+	if (i <= j) {
+
+        setTimeout(function () {
+            that.conquer(numbers, x, first, last, i, j);
+    	}, this.time);
+
+	} else {
+
+        setTimeout(function () {
+    	    that.sort(numbers, first, j);
+    	}, this.time);
+
+    	setTimeout(function () {
+        	that.sort(numbers, i, last);
+    	}, this.time);
+	}
 };
 
 QuickSort.prototype.swap = function (numbers, first, second) {
