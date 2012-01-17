@@ -48,34 +48,41 @@ QuickSort.prototype.sort = function (numbers, first, last) {
     	if (this.random) {
     		pivot = Math.floor(Math.random() * (last - first + 1) + first); // random pivot
     	} else {
-    		pivot = Math.floor((first + last) / 2); // middle pivot
+    		//pivot = Math.floor((first + last) / 2); // middle pivot
+    		pivot = first; // first as pivot
     	}
     	x = numbers[pivot];
 
-    	do {
+        var interval = setInterval(function () {
+
     		while (numbers[i] < x) {
     			i++;
-    			this.count++;
+    			that.count++;
     		}
 
     		while (x < numbers[j]) {
     			j--;
-    			this.count++;
+    			that.count++;
     		}
 
     		if (i <= j) {
-    			this.swap(numbers, i, j);
+    			that.swap(numbers, i, j);
 
     			i++;
     			j--;
     		}
-    	} while (i <= j);
 
-        setTimeout(function () {
-    	    that.sort(numbers, first, j);
-    	}, this.time);
-    	setTimeout(function () {
-        	that.sort(numbers, i, last);
+    		if (i > j) {
+    		    clearInterval(interval);
+
+	            setTimeout(function () {
+	        	    that.sort(numbers, first, j);
+	        	}, this.time);
+	        	setTimeout(function () {
+	            	that.sort(numbers, i, last);
+	        	}, this.time);
+    		}
+    		
     	}, this.time);
     }
 };
