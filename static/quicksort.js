@@ -1,11 +1,11 @@
-var QuickSort = function (container, numbers, random) {
+var QuickSort = function (container, random) {
 
     var that = this;
 
     this.container = container;
-    this.numbers = numbers;
     this.random = random;
 
+    this.numbers = [];
     this.time = 100;
     this.context = this.container.find('.plot').get(0).getContext('2d');
     this.count = 0;

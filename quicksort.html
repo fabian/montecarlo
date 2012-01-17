@@ -8,20 +8,40 @@
 	<script>
     $(function () {
 
-        var numbers1 = [];
-        var numbers2 = [];
+        var q1 = new QuickSort($('.container.random'), true);
+        var q2 = new QuickSort($('.container.middle'), false);
+
         var size = 500;
-        var rand;
-        for (var i = 1; i < size; i++) {
-            rand = Math.random() * (size + 1);
-            numbers1.push(rand);
-            numbers2.push(rand);
-        }
 
-        var q1 = new QuickSort($('.container.random'), numbers1, true);
-        var q2 = new QuickSort($('.container.middle'), numbers2, false);
+        $('.commands a.random').click(function () {
+            var numbers1 = [];
+            var numbers2 = [];
+            var rand;
+            for (var i = 1; i < size; i++) {
+                rand = Math.random() * (size + 1);
+                numbers1.push(rand);
+                numbers2.push(rand);
+            }
 
-        $('.commands a').click(function () {
+            q1.numbers = numbers1;
+            q2.numbers = numbers2;
+        });
+
+        $('.commands a.reverse').click(function () {
+            var numbers1 = [];
+            var numbers2 = [];
+            for (var i = 1; i < size; i++) {
+                numbers1.push(i);
+                numbers2.push(i);
+            }
+            numbers1.reverse();
+            numbers2.reverse();
+
+            q1.numbers = numbers1;
+            q2.numbers = numbers2;
+        });
+
+        $('.commands a.sort').click(function () {
     
             q1.start();
             q2.start();
@@ -38,12 +58,14 @@
         <div class="count"></div>
     </div>
     <div class="container middle">
-        <div>Middle</div>
+        <div>Deterministic</div>
         <canvas class="plot" width="500" height="500"></canvas>
         <div class="count"></div>
     </div>
     <div class="container commands">
-        <a href="#">Sort</a>
+        <p><a href="#" class="random">Random</a></p>
+        <p><a href="#" class="reverse">Reverse sorted</a></p>
+        <p><a href="#" class="sort">Sort</a></p>
     </div>
     <script type="text/javascript">
       (function() {

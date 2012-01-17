@@ -16,6 +16,8 @@ p {
 
 a {
 	color: #234674;
+	display: block;
+	padding-bottom: 10px;
 }
 
 .container {
