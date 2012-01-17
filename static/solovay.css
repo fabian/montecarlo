@@ -1,0 +1,22 @@
+body {
+	background-color: #f4f4f4;
+	margin: 0;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	font-size: 1em;
+	font-weight: normal;
+}
+
+a {
+    color: #234674;
+}
+
+.container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px 30px;
+    margin: 90px 60px;
+    width: 450px;
+}
