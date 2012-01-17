@@ -27,7 +27,7 @@
             q2.numbers = numbers2;
 
             return false;
-        });
+        }).click();
 
         $('.commands a.reverse').click(function () {
             var numbers1 = [];
@@ -57,19 +57,19 @@
 </head>
 <body>
     <div class="container random">
-        <div>Random</div>
+        <div><a href="http://en.wikipedia.org/wiki/Quicksort#Randomized_quicksort_expected_complexity">Random</a></div>
         <canvas class="plot" width="500" height="500"></canvas>
         <div class="count"></div>
     </div>
     <div class="container middle">
-        <div>Deterministic</div>
+        <div><a href="http://en.wikipedia.org/wiki/Quicksort#Average_complexity">Deterministic</a></div>
         <canvas class="plot" width="500" height="500"></canvas>
         <div class="count"></div>
     </div>
     <div class="container commands">
+        <p><a href="#" class="sort">Sort</a></p>
         <p><a href="#" class="random">Random data</a></p>
         <p><a href="#" class="reverse">Reverse data</a></p>
-        <p><a href="#" class="sort">Sort</a></p>
     </div>
     <script type="text/javascript">
       (function() {

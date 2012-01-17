@@ -20,6 +20,10 @@ a {
 	padding-bottom: 10px;
 }
 
+a.sort {
+    padding-bottom: 24px;
+}
+
 .container {
     float: left;
     padding: 30px;
