@@ -28,7 +28,7 @@ QuickSort.prototype.draw = function () {
 
         var color = '#0090ff';
         that.context.fillStyle = color;
-        that.context.fillRect(number, i, 3, 3);
+        that.context.fillRect(i, number, 1, 500);
     });
 
     this.container.find('.count').text(this.count);
