@@ -26,9 +26,15 @@ QuickSort.prototype.draw = function () {
     var that = this;
     $(this.numbers).each(function (i, number) {
 
-        var color = '#0090ff';
+        var color = '#d6e7f3';
         that.context.fillStyle = color;
-        that.context.fillRect(i, number, 1, 500);
+        that.context.fillRect(i + 1, number, 1, 500);
+
+        var color = '#0090ff';
+        that.context.beginPath();
+        that.context.arc(i + 1, number, 2, 0, Math.PI * 2, true);  
+        that.context.fillStyle = color;
+        that.context.fill();
     });
 
     this.container.find('.count').text(this.count);
