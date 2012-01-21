@@ -9,6 +9,11 @@ function solovay(n, tests) {
 
     var a, j, l, s = [];
 
+    // limit tests to n - 1
+    if (tests >= n) {
+        tests = n - 1;
+    }
+
     for (var i = 1; i <= tests; i++) {
 
         // draw random number never used before
