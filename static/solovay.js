@@ -42,7 +42,7 @@ function solovay(n, tests) {
             return "Not prime!"
         }
     }
-    return "Possibly prime with probability of " + (100 - (1 / Math.pow(2, tests)  * 100)) + "%";
+    return "Possibly prime with probability of " + (100 - (1 / Math.pow(2, tests)  * 100)) + "% (random number " + a + ")";
 }
 
 function jacobi(n, m) {
